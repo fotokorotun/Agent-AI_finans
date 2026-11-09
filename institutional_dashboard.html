@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Institutional Capital Flows Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0b0f19; color: #f3f4f6; font-family: sans-serif; }
+        .card-bg { background-color: #111827; border: 1px solid #1f2937; }
+    </style>
+</head>
+<body class="p-6">
+    <div class="max-w-7xl mx-auto space-y-6">
+        <header class="flex justify-between items-center pb-6 border-b border-gray-800">
+            <div>
+                <h1 class="text-2xl font-bold text-white flex items-center gap-2">
+                    🏛️ Institutional Capital Tracker (BlackRock, Vanguard & Flows)
+                </h1>
+                <p class="text-sm text-gray-400 mt-1">Мониторинг перелива капитала институционалов по регионам: США, Европа, Азия, Англия</p>
+            </div>
+            <div class="card-bg p-3 rounded-xl">
+                <span class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Статус: Активный сканер</span>
+            </div>
+        </header>
+
+        <!-- Региональный срез потоков -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="card-bg p-4 rounded-xl border-t-2 border-emerald-500">
+                <div class="text-xs text-gray-400 uppercase font-semibold">США (Технологии & AI)</div>
+                <div class="text-lg font-bold text-white mt-1">Основной приток</div>
+                <div class="text-xs text-emerald-400 mt-1">Фокус: BlackRock / Флагманские ETF</div>
+            </div>
+            <div class="card-bg p-4 rounded-xl border-t-2 border-blue-500">
+                <div class="text-xs text-gray-400 uppercase font-semibold">Европа (Дивиденды / Value)</div>
+                <div class="text-lg font-bold text-white mt-1">Умеренный приток</div>
+                <div class="text-xs text-blue-400 mt-1">Фокус: VGK, EZU, UK активы</div>
+            </div>
+            <div class="card-bg p-4 rounded-xl border-t-2 border-amber-500">
+                <div class="text-xs text-gray-400 uppercase font-semibold">Азия (Япония / Сингапур)</div>
+                <div class="text-lg font-bold text-white mt-1">Переток капитала</div>
+                <div class="text-xs text-amber-400 mt-1">Фокус: VPL, японские реструктуризации</div>
+            </div>
+            <div class="card-bg p-4 rounded-xl border-t-2 border-purple-500">
+                <div class="text-xs text-gray-400 uppercase font-semibold">Англия (Защитные активы)</div>
+                <div class="text-lg font-bold text-white mt-1">Стабильные потоки</div>
+                <div class="text-xs text-purple-400 mt-1">Фокус: EWU, дивидендные лидеры LSE</div>
+            </div>
+        </div>
+
+        <!-- Таблица институциональных активов -->
+        <div class="card-bg rounded-xl overflow-hidden shadow-xl">
+            <div class="p-4 border-b border-gray-800 font-semibold text-white">Таблица институционального мониторинга и динамики</div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="border-b border-gray-800 text-xs text-gray-400 uppercase bg-gray-900/50">
+                            <th class="p-3">Тикер / Фонд</th>
+                            <th class="p-3">Тип структуры</th>
+                            <th class="p-3">Регион фокуса</th>
+                            <th class="p-3">Цена ($)</th>
+                            <th class="p-3">Динамика (1M)</th>
+                            <th class="p-3">Направление капитала (Flow)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-800">
+                        
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">BLK <span class="block text-xs font-normal text-gray-400">BlackRock, Inc.</span></td>
+                    <td class="p-3 text-gray-300">Управляющий фондами</td>
+                    <td class="p-3 font-semibold text-blue-300">США</td>
+                    <td class="p-3 font-mono">1124.60 $</td>
+                    <td class="p-3 font-mono font-bold text-emerald-400">+3.15%</td>
+                    <td class="p-3 text-xs text-gray-300">Приток в приватный кредит / ИИ</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">STT <span class="block text-xs font-normal text-gray-400">State Street Corp.</span></td>
+                    <td class="p-3 text-gray-300">Кастодиан / Фонды</td>
+                    <td class="p-3 font-semibold text-blue-300">США</td>
+                    <td class="p-3 font-mono">165.43 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-9.81%</td>
+                    <td class="p-3 text-xs text-gray-300">Стабильный ребаланс</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">BK <span class="block text-xs font-normal text-gray-400">The Bank of New York Mellon</span></td>
+                    <td class="p-3 text-gray-300">Институциональный банк</td>
+                    <td class="p-3 font-semibold text-blue-300">США</td>
+                    <td class="p-3 font-mono">100.00 $</td>
+                    <td class="p-3 font-mono font-bold text-emerald-400">+0.00%</td>
+                    <td class="p-3 text-xs text-gray-300">Накопление активов</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">TROW <span class="block text-xs font-normal text-gray-400">T. Rowe Price Group</span></td>
+                    <td class="p-3 text-gray-300">Инвестиционный фонд</td>
+                    <td class="p-3 font-semibold text-blue-300">США</td>
+                    <td class="p-3 font-mono">100.10 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-4.33%</td>
+                    <td class="p-3 text-xs text-gray-300">Ротация в технологический сектор</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">SPY <span class="block text-xs font-normal text-gray-400">SPDR S&P 500 ETF Trust</span></td>
+                    <td class="p-3 text-gray-300">Флагманский ETF</td>
+                    <td class="p-3 font-semibold text-blue-300">США</td>
+                    <td class="p-3 font-mono">766.48 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-0.91%</td>
+                    <td class="p-3 text-xs text-gray-300">Основной приток ликвидности</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">IVV <span class="block text-xs font-normal text-gray-400">iShares Core S&P 500 ETF (BlackRock)</span></td>
+                    <td class="p-3 text-gray-300">Институциональный ETF</td>
+                    <td class="p-3 font-semibold text-blue-300">США</td>
+                    <td class="p-3 font-mono">770.01 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-0.88%</td>
+                    <td class="p-3 text-xs text-gray-300">Долгосрочный капитал пенсий</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">VTI <span class="block text-xs font-normal text-gray-400">VTI</span></td>
+                    <td class="p-3 text-gray-300">Инструмент / Акция</td>
+                    <td class="p-3 font-semibold text-blue-300">Глобальный</td>
+                    <td class="p-3 font-mono">375.54 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-1.21%</td>
+                    <td class="p-3 text-xs text-gray-300">Мониторинг потоков</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">VGK <span class="block text-xs font-normal text-gray-400">Vanguard FTSE Europe ETF</span></td>
+                    <td class="p-3 text-gray-300">Региональный ETF</td>
+                    <td class="p-3 font-semibold text-blue-300">Европа</td>
+                    <td class="p-3 font-mono">86.43 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-3.15%</td>
+                    <td class="p-3 text-xs text-gray-300">Умеренный приток (дешевые оценки)</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">VPL <span class="block text-xs font-normal text-gray-400">Vanguard FTSE Pacific ETF</span></td>
+                    <td class="p-3 text-gray-300">Региональный ETF</td>
+                    <td class="p-3 font-semibold text-blue-300">Азия-Тихий океан</td>
+                    <td class="p-3 font-mono">110.02 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-6.75%</td>
+                    <td class="p-3 text-xs text-gray-300">Перелив капитала в Японию и Сингапур</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">EWU <span class="block text-xs font-normal text-gray-400">iShares MSCI United Kingdom ETF</span></td>
+                    <td class="p-3 text-gray-300">Страновой ETF</td>
+                    <td class="p-3 font-semibold text-blue-300">Англия</td>
+                    <td class="p-3 font-mono">47.34 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-0.73%</td>
+                    <td class="p-3 text-xs text-gray-300">Защитные дивидендные потоки</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">EZU <span class="block text-xs font-normal text-gray-400">iShares MSCI Eurozone ETF</span></td>
+                    <td class="p-3 text-gray-300">Страновой ETF</td>
+                    <td class="p-3 font-semibold text-blue-300">Европа</td>
+                    <td class="p-3 font-mono">65.13 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-5.60%</td>
+                    <td class="p-3 text-xs text-gray-300">Ребалансировка в промышленные циклы</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">MCHI <span class="block text-xs font-normal text-gray-400">iShares MSCI China ETF</span></td>
+                    <td class="p-3 text-gray-300">Страновой ETF</td>
+                    <td class="p-3 font-semibold text-blue-300">Азия (Китай)</td>
+                    <td class="p-3 font-mono">50.87 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-5.80%</td>
+                    <td class="p-3 text-xs text-gray-300">Спекулятивный приток / Выход</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">EWY <span class="block text-xs font-normal text-gray-400">EWY</span></td>
+                    <td class="p-3 text-gray-300">Инструмент / Акция</td>
+                    <td class="p-3 font-semibold text-blue-300">Глобальный</td>
+                    <td class="p-3 font-mono">156.58 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-17.22%</td>
+                    <td class="p-3 text-xs text-gray-300">Мониторинг потоков</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">EWT <span class="block text-xs font-normal text-gray-400">EWT</span></td>
+                    <td class="p-3 text-gray-300">Инструмент / Акция</td>
+                    <td class="p-3 font-semibold text-blue-300">Глобальный</td>
+                    <td class="p-3 font-mono">107.26 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-7.25%</td>
+                    <td class="p-3 text-xs text-gray-300">Мониторинг потоков</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">XLE <span class="block text-xs font-normal text-gray-400">Energy Select Sector SPDR</span></td>
+                    <td class="p-3 text-gray-300">Секторный ETF</td>
+                    <td class="p-3 font-semibold text-blue-300">США</td>
+                    <td class="p-3 font-mono">67.80 $</td>
+                    <td class="p-3 font-mono font-bold text-emerald-400">+8.55%</td>
+                    <td class="p-3 text-xs text-gray-300">Хеджирование инфляции</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">XLF <span class="block text-xs font-normal text-gray-400">Financial Select Sector SPDR</span></td>
+                    <td class="p-3 text-gray-300">Секторный ETF</td>
+                    <td class="p-3 font-semibold text-blue-300">США</td>
+                    <td class="p-3 font-mono">55.06 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-1.50%</td>
+                    <td class="p-3 text-xs text-gray-300">Институциональный переток</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">XLK <span class="block text-xs font-normal text-gray-400">XLK</span></td>
+                    <td class="p-3 text-gray-300">Инструмент / Акция</td>
+                    <td class="p-3 font-semibold text-blue-300">Глобальный</td>
+                    <td class="p-3 font-mono">185.96 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-4.56%</td>
+                    <td class="p-3 text-xs text-gray-300">Мониторинг потоков</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">ARKK <span class="block text-xs font-normal text-gray-400">ARKK</span></td>
+                    <td class="p-3 text-gray-300">Инструмент / Акция</td>
+                    <td class="p-3 font-semibold text-blue-300">Глобальный</td>
+                    <td class="p-3 font-mono">82.31 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-9.27%</td>
+                    <td class="p-3 text-xs text-gray-300">Мониторинг потоков</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">IWM <span class="block text-xs font-normal text-gray-400">IWM</span></td>
+                    <td class="p-3 text-gray-300">Инструмент / Акция</td>
+                    <td class="p-3 font-semibold text-blue-300">Глобальный</td>
+                    <td class="p-3 font-mono">271.28 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-5.01%</td>
+                    <td class="p-3 text-xs text-gray-300">Мониторинг потоков</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">EEM <span class="block text-xs font-normal text-gray-400">EEM</span></td>
+                    <td class="p-3 text-gray-300">Инструмент / Акция</td>
+                    <td class="p-3 font-semibold text-blue-300">Глобальный</td>
+                    <td class="p-3 font-mono">63.31 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-8.02%</td>
+                    <td class="p-3 text-xs text-gray-300">Мониторинг потоков</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">FXI <span class="block text-xs font-normal text-gray-400">FXI</span></td>
+                    <td class="p-3 text-gray-300">Инструмент / Акция</td>
+                    <td class="p-3 font-semibold text-blue-300">Глобальный</td>
+                    <td class="p-3 font-mono">33.53 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-3.95%</td>
+                    <td class="p-3 text-xs text-gray-300">Мониторинг потоков</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">EWJ <span class="block text-xs font-normal text-gray-400">EWJ</span></td>
+                    <td class="p-3 text-gray-300">Инструмент / Акция</td>
+                    <td class="p-3 font-semibold text-blue-300">Глобальный</td>
+                    <td class="p-3 font-mono">94.99 $</td>
+                    <td class="p-3 font-mono font-bold text-rose-400">-3.03%</td>
+                    <td class="p-3 text-xs text-gray-300">Мониторинг потоков</td>
+                </tr>
+            
+                <tr class="hover:bg-gray-800/40 transition-colors">
+                    <td class="p-3 font-mono font-bold text-emerald-400">EWSG <span class="block text-xs font-normal text-gray-400">EWSG</span></td>
+                    <td class="p-3 text-gray-300">Инструмент / Акция</td>
+                    <td class="p-3 font-semibold text-blue-300">Глобальный</td>
+                    <td class="p-3 font-mono">100.00 $</td>
+                    <td class="p-3 font-mono font-bold text-emerald-400">+0.00%</td>
+                    <td class="p-3 text-xs text-gray-300">Мониторинг потоков</td>
+                </tr>
+            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Институциональный чек-лист и отчет -->
+        <div class="card-bg p-6 rounded-xl space-y-4">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                📋 Чек-лист и регламент отчетов: Как отслеживать действия фондов
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-gray-300">
+                <div class="bg-gray-900/50 p-4 rounded-lg space-y-2 border border-gray-800">
+                    <div class="font-bold text-emerald-400 text-sm">1. Отчеты 13F (США)</div>
+                    <p>Публикуются раз в квартал (через 45 дней после окончания квартала). Проверяйте сайты WhaleWisdom или SEC EDGAR для BlackRock (BLK) и Vanguard, чтобы видеть новые топ-покупки.</p>
+                </div>
+                <div class="bg-gray-900/50 p-4 rounded-lg space-y-2 border border-gray-800">
+                    <div class="font-bold text-blue-400 text-sm">2. Еженедельные ETF Flows</div>
+                    <p>Следите за притоками в фонды `VGK` (Европа) и `VPL` (Азия) на ETF.com. Резкий рост притока означает крупную ребалансировку институционалов в эти регионы.</p>
+                </div>
+                <div class="bg-gray-900/50 p-4 rounded-lg space-y-2 border border-gray-800">
+                    <div class="font-bold text-amber-400 text-sm">3. Инсайдерские реестры (UK / SG)</div>
+                    <p>Для британских (`.L`) и сингапурских (`.SI`) компаний крупные фонды обязаны раскрывать превышение порога в 3-5% голосующих акций. Отслеживайте их через Financial Times.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
