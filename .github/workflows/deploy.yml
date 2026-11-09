@@ -2,17 +2,9 @@ name: Update and Deploy Dashboard
 
 on:
   schedule:
+    # Запуск в 09:00, 13:00 и 19:00 UTC (что соответствует 10:00, 14:00 и 20:00 по местному времени) с понедельника по пятницу
     - cron: '0 9,13,19 * * 1-5'
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  workflow_dispatch: # Позволяет запускать воркфлоу вручную из интерфейса GitHub Actions
 
 jobs:
   build:
@@ -35,7 +27,11 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python generate_analysis.py
+        run: |
+          echo "=== WATCHLIST CONTENT ==="
+          cat watchlist.txt
+          echo "========================="
+          python generate_analysis.py
 
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
