@@ -2,9 +2,15 @@ name: Update and Deploy Dashboard
 
 on:
   schedule:
-    # Запуск в 09:00, 13:00 и 19:00 UTC (что соответствует 10:00, 14:00 и 20:00 по местному времени) с понедельника по пятницу
+    # Запуск в 09:00, 13:00 и 19:00 UTC (10:00, 14:00 и 20:00 по местному времени в Барселоне) с понедельника по пятницу
     - cron: '0 9,13,19 * * 1-5'
-  workflow_dispatch: # Позволяет запускать воркфлоу вручную из интерфейса GitHub Actions
+  workflow_dispatch: # Позволяет запускать вручную
+
+# Добавляем глобальные разрешения для токена GitHub Actions
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
