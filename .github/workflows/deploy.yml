@@ -4,9 +4,9 @@ on:
   schedule:
     # Запуск в 09:00, 13:00 и 19:00 UTC (10:00, 14:00 и 20:00 по местному времени в Барселоне) с понедельника по пятницу
     - cron: '0 9,13,19 * * 1-5'
-  workflow_dispatch: # Позволяет запускать вручную
+  workflow_dispatch: # Позволяет запускать воркфлоу вручную из интерфейса GitHub Actions
 
-# Добавляем глобальные разрешения для токена GitHub Actions
+# Разрешения, необходимые для корректной публикации на GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -29,7 +29,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install yfinance pandas requests
 
-      - name: Run analysis motor
+      - name: Run analysis motor & build dashboard
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -38,6 +38,7 @@ jobs:
           cat watchlist.txt
           echo "========================="
           python generate_analysis.py
+          python build_dashboard.py
 
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
